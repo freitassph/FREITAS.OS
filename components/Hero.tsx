@@ -78,16 +78,20 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
       {/* Refined Background Ambience - Reduced opacity on mobile for text readability */}
       <div className={`absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b ${gradientColor} to-transparent blur-[120px] md:blur-[150px] opacity-5 md:opacity-10 pointer-events-none`} />
       
-      {/* Header Info */}
-      <div className="absolute top-6 right-4 md:top-12 md:right-12 z-20 flex items-center gap-4 md:gap-6 opacity-60 mix-blend-plus-lighter">
-        <div className="hidden md:flex flex-col items-end">
+      {/* Header Info - Fixed for Tablet/Mobile Legibility */}
+      <div className="absolute top-6 right-4 md:top-12 md:right-12 z-30 flex items-center gap-4 md:gap-6 opacity-80">
+        {/* Location hidden on Tablet (md) to prevent overlap, visible on Desktop (lg) */}
+        <div className="hidden lg:flex flex-col items-end">
             <span className="text-[9px] font-mono text-gray-500 tracking-widest uppercase">Location</span>
             <div className="flex items-center gap-2 text-[10px] font-mono text-gray-300 tracking-widest">
                <span>BRASIL_HQ</span>
                <LocateFixed size={10} className={accentColor} />
             </div>
         </div>
-        <div className="h-6 w-px bg-white/20 hidden md:block"></div>
+        
+        {/* Divider visible only on Desktop */}
+        <div className="h-6 w-px bg-white/20 hidden lg:block"></div>
+        
         <div className="flex flex-col items-end">
             <span className="text-[9px] font-mono text-gray-500 tracking-widest uppercase">Time_Sync</span>
             <div className="flex items-center gap-2 text-[10px] font-mono text-gray-300 tracking-widest">
