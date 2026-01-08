@@ -23,10 +23,12 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   const { scrollY } = useScroll();
   const mobileY = useTransform(scrollY, [0, 300], [0, 30]);
 
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["2deg", "-2deg"]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-2deg", "2deg"]);
+  // Using numbers for rotation to ensure correct MotionValue<number> type inference
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], [2, -2]);
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], [-2, 2]);
 
-  // Define background gradient transform explicitly to avoid TS2345
+  // Define background gradient transform explicitly
+  // Using explicit backgroundImage in style prop to avoid type conflicts
   const glassBackground = useTransform(
     mouseX, 
     [-0.5, 0.5], 
@@ -185,7 +187,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
 
                 {/* Glass Reflection Overlay */}
                 <motion.div 
-                   style={{ background: glassBackground }}
+                   style={{ backgroundImage: glassBackground }}
                    className="absolute inset-0 z-30 pointer-events-none"
                 />
 
