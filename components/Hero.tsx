@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppMode } from '../types';
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
-import { LocateFixed, Clock, Zap, ShieldCheck, TrendingUp, Award, Activity, ArrowDown } from 'lucide-react';
-import ScrambleText from './ScrambleText';
+import { LocateFixed, Clock, Activity, ShieldCheck, TrendingUp, ArrowDown } from 'lucide-react';
 
 interface HeroProps {
   mode: AppMode;
@@ -131,9 +130,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
             className="flex flex-col md:flex-row items-center gap-6 justify-center md:justify-start max-w-xl"
           >
             <p className="font-sans text-sm md:text-base leading-relaxed text-gray-400 font-light">
-              <ScrambleText 
-                text="Infraestrutura Digital de Elite & Agentes Inteligentes. Desenvolvemos WebApps e Landing Pages de alta conversão e implementamos IA para captar pacientes High-Ticket enquanto você opera." 
-              />
+              Infraestrutura Digital de Elite & Agentes Inteligentes. Desenvolvemos WebApps e Landing Pages de alta conversão e implementamos IA para captar pacientes High-Ticket enquanto você opera.
             </p>
           </motion.div>
 
