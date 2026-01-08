@@ -15,12 +15,21 @@ const ECGGraph: React.FC = () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        // Resize handling
+        // Resize handling with DPR for sharp lines on mobile
         const resize = () => {
             const parent = canvas.parentElement;
             if(parent) {
-                canvas.width = parent.clientWidth;
-                canvas.height = parent.clientHeight;
+                const dpr = window.devicePixelRatio || 1;
+                const rect = parent.getBoundingClientRect();
+                
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                
+                // Style width/height must match the display size
+                canvas.style.width = `${rect.width}px`;
+                canvas.style.height = `${rect.height}px`;
+                
+                ctx.scale(dpr, dpr);
             }
         };
         resize();
@@ -52,17 +61,21 @@ const ECGGraph: React.FC = () => {
             dataPoints.push(val);
             if(dataPoints.length > maxPoints) dataPoints.shift();
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Need to get current logical width/height for drawing calculation
+            const width = canvas.width / (window.devicePixelRatio || 1);
+            const height = canvas.height / (window.devicePixelRatio || 1);
+
+            ctx.clearRect(0, 0, width, height);
             ctx.beginPath();
             ctx.strokeStyle = '#14b8a6'; // medical-teal
             ctx.lineWidth = 1.5;
             ctx.lineJoin = 'round';
             
-            const step = canvas.width / (maxPoints - 1);
+            const step = width / (maxPoints - 1);
             
             for(let i=0; i<dataPoints.length; i++) {
                 const x = i * step;
-                const y = dataPoints[i] * canvas.height;
+                const y = dataPoints[i] * height;
                 if(i===0) ctx.moveTo(x, y);
                 else ctx.lineTo(x, y);
             }
@@ -70,7 +83,7 @@ const ECGGraph: React.FC = () => {
 
             // Leading dot
             const lastX = (dataPoints.length - 1) * step;
-            const lastY = dataPoints[dataPoints.length - 1] * canvas.height;
+            const lastY = dataPoints[dataPoints.length - 1] * height;
             
             ctx.beginPath();
             ctx.fillStyle = '#ffffff';
@@ -92,7 +105,7 @@ const ECGGraph: React.FC = () => {
         };
     }, []);
 
-    return <div className="h-6 w-20 relative overflow-hidden opacity-80"><canvas ref={canvasRef} className="absolute inset-0 w-full h-full" /></div>;
+    return <div className="h-6 w-20 relative overflow-hidden opacity-80"><canvas ref={canvasRef} className="absolute inset-0 block" /></div>;
 }
 
 const Terminal: React.FC<TerminalProps> = ({ mode }) => {
@@ -133,7 +146,7 @@ const Terminal: React.FC<TerminalProps> = ({ mode }) => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             
             {/* Title / Status */}
-            <div className="flex items-center gap-4 pl-2 min-w-fit">
+            <div className="flex items-center gap-4 pl-2 min-w-fit w-full lg:w-auto justify-center lg:justify-start">
                 <div className="p-2.5 bg-zinc-900/50 rounded-lg border border-white/5 shadow-[0_0_15px_rgba(20,184,166,0.05)]">
                     <HardDrive size={16} className="text-medical-teal opacity-80" />
                 </div>
@@ -182,7 +195,7 @@ const Terminal: React.FC<TerminalProps> = ({ mode }) => {
                 ))}
             </div>
 
-            {/* Live Indicator */}
+            {/* Live Indicator - Hidden on mobile, visible on desktop */}
             <div className="hidden lg:flex flex-col items-end opacity-30 pr-2 min-w-fit">
                 <Wifi size={14} className="text-gray-500 mb-1" />
                 <span className="text-[9px] font-mono text-gray-600">LATENCY: 12ms</span>

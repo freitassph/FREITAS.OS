@@ -83,18 +83,18 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
     <section id="modules-section" className="py-24 md:py-32 px-4 md:px-6 container mx-auto relative z-10 scroll-mt-12">
        
        {/* Section Header */}
-       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 border-b border-white/5 pb-8">
+       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-8 border-b border-white/5 pb-8">
           <div className="space-y-4">
             <div className={`flex items-center gap-3 text-[10px] font-mono tracking-[0.3em] ${accentColor} opacity-80 uppercase`}>
                 <Stethoscope size={14} />
                 <span>Ecossistema de Soluções</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-white tracking-tight leading-none">
-              Protocolos de <span className="italic font-light opacity-60 font-serif">Alta Performance.</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-white tracking-tight leading-none">
+              Protocolos de <br className="md:hidden" /><span className="italic font-light opacity-60 font-serif">Alta Performance.</span>
             </h2>
           </div>
           
-          <div className="flex items-center gap-4 bg-white/5 border border-white/5 px-5 py-3 rounded-full backdrop-blur-md">
+          <div className="self-start md:self-auto flex items-center gap-4 bg-white/5 border border-white/5 px-5 py-3 rounded-full backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -117,7 +117,7 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
                key={module.id}
                layout
                onClick={() => handleInteraction(module.id)}
-               className={`relative w-full border transition-all duration-500 rounded-sm overflow-hidden cursor-pointer group
+               className={`relative w-full border transition-all duration-500 rounded-sm overflow-hidden cursor-pointer group active:scale-[0.99] md:active:scale-100
                   ${isActive 
                     ? 'bg-zinc-900 border-medical-teal/40 shadow-[0_0_30px_rgba(20,184,166,0.1)]' 
                     : 'bg-zinc-900/40 border-white/5 hover:border-white/20'
@@ -126,23 +126,23 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
                 <div className="relative z-10 p-6 md:p-8">
                    
                    {/* Header Row */}
-                   <div className="flex items-center justify-between gap-6">
-                      <div className="flex items-center gap-6 md:gap-8">
+                   <div className="flex items-start md:items-center justify-between gap-4 md:gap-6">
+                      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 flex-1">
                          <span className={`font-mono text-xs tracking-widest ${isActive ? accentColor : 'text-gray-600'}`}>
                             {module.id}
                          </span>
                          
-                         <div>
-                             <h3 className={`font-serif text-xl md:text-2xl text-gray-200 transition-colors duration-300 ${isActive ? 'text-white' : 'group-hover:text-white'}`}>
+                         <div className="flex-1">
+                             <h3 className={`font-serif text-xl md:text-2xl text-gray-200 transition-colors duration-300 leading-tight ${isActive ? 'text-white' : 'group-hover:text-white'}`}>
                                 {module.title}
                              </h3>
-                             <p className="font-mono text-[9px] tracking-[0.2em] text-gray-500 uppercase mt-2">
+                             <p className="font-mono text-[9px] tracking-[0.15em] md:tracking-[0.2em] text-gray-500 uppercase mt-2">
                                 {module.subtitle}
                              </p>
                          </div>
                       </div>
 
-                      <div className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-white text-black rotate-180' : 'text-gray-500 group-hover:border-white/30'}`}>
+                      <div className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 flex-shrink-0 ${isActive ? 'bg-white text-black rotate-180' : 'text-gray-500 group-hover:border-white/30'}`}>
                           {isActive ? <Minus size={14} /> : <Plus size={14} />}
                       </div>
                    </div>
@@ -157,9 +157,9 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
                             transition={{ duration: 0.4, ease: "easeInOut" }}
                             className="overflow-hidden"
                          >
-                            <div className="pt-8 md:pt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 border-t border-white/5 mt-8">
+                            <div className="pt-6 md:pt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 border-t border-white/5 mt-6 md:mt-8">
                                 
-                                <div className="lg:col-span-7 space-y-8">
+                                <div className="lg:col-span-7 space-y-6 md:space-y-8">
                                     <p className="font-sans text-sm md:text-base text-gray-300 leading-relaxed font-light">
                                         {module.descClinic}
                                     </p>
@@ -170,7 +170,7 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className={`inline-flex items-center gap-3 group/btn bg-white text-black px-8 py-3 transition-all hover:bg-gray-200`}
+                                            className={`inline-flex items-center gap-3 group/btn bg-white text-black px-6 py-3 md:px-8 md:py-3 transition-all hover:bg-gray-200 w-full md:w-auto justify-center md:justify-start`}
                                         >
                                             <span className="font-mono text-[10px] font-bold tracking-[0.2em] uppercase">
                                                 {module.status === 'APPLICATION_ONLY' ? 'Aplicar Agora' : 'Solicitar Orçamento'}
@@ -189,11 +189,11 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
 
                                         <div className="space-y-4">
                                             {module.specs.map((spec, idx) => (
-                                                <div key={idx} className="flex items-center justify-between border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                                                <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/5 pb-2 last:border-0 last:pb-0 gap-1 sm:gap-0">
                                                     <span className="font-mono text-[10px] text-gray-500 tracking-wider uppercase">
                                                         {spec.label}
                                                     </span>
-                                                    <span className="font-mono text-[10px] font-bold tracking-wider text-gray-300 text-right">
+                                                    <span className="font-mono text-[10px] font-bold tracking-wider text-gray-300 sm:text-right">
                                                         {spec.value}
                                                     </span>
                                                 </div>

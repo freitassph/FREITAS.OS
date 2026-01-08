@@ -27,7 +27,6 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   const rotateY = useTransform(mouseX, [-0.5, 0.5], [-2, 2]);
 
   // Define background gradient transform explicitly
-  // Using explicit backgroundImage in style prop to avoid type conflicts
   const glassBackground = useTransform(
     mouseX, 
     [-0.5, 0.5], 
@@ -74,13 +73,13 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   return (
     <section 
       onMouseMove={handleMouseMove}
-      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-20 md:py-0"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-24 md:py-0"
     >
-      {/* Refined Background Ambience */}
-      <div className={`absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b ${gradientColor} to-transparent blur-[150px] opacity-10 pointer-events-none`} />
+      {/* Refined Background Ambience - Reduced opacity on mobile for text readability */}
+      <div className={`absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b ${gradientColor} to-transparent blur-[120px] md:blur-[150px] opacity-5 md:opacity-10 pointer-events-none`} />
       
       {/* Header Info */}
-      <div className="absolute top-8 right-6 md:top-12 md:right-12 z-20 flex items-center gap-6 opacity-60 mix-blend-plus-lighter">
+      <div className="absolute top-6 right-4 md:top-12 md:right-12 z-20 flex items-center gap-4 md:gap-6 opacity-60 mix-blend-plus-lighter">
         <div className="hidden md:flex flex-col items-end">
             <span className="text-[9px] font-mono text-gray-500 tracking-widest uppercase">Location</span>
             <div className="flex items-center gap-2 text-[10px] font-mono text-gray-300 tracking-widest">
@@ -98,10 +97,10 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center z-10 pt-16 md:pt-0">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10 pt-10 md:pt-0">
         
         {/* Text Content */}
-        <div className="order-1 md:col-span-7 text-center md:text-left space-y-8 relative flex flex-col items-center md:items-start">
+        <div className="order-1 lg:col-span-7 text-center lg:text-left space-y-6 md:space-y-8 relative flex flex-col items-center lg:items-start">
           
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -110,12 +109,12 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
             className="space-y-4 w-full"
           >
             {/* Tagline */}
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-2 md:mb-4">
                 <span className="h-px w-8 bg-medical-teal"></span>
-                <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-medical-teal uppercase">Medical Web Architecture</span>
+                <span className="text-[9px] md:text-xs font-mono tracking-[0.25em] md:tracking-[0.3em] text-medical-teal uppercase">Medical Web Architecture</span>
             </div>
 
-            <h1 className="font-serif text-[3rem] leading-[1.1] md:text-[5.5rem] md:leading-[0.95] text-white tracking-tight">
+            <h1 className="font-serif text-4xl sm:text-[3.5rem] leading-[1.1] md:text-[5.5rem] md:leading-[0.95] text-white tracking-tight">
               Sua Clínica.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500 pb-2">
                  Reinventada pela IA.
@@ -127,9 +126,9 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex flex-col md:flex-row items-center gap-6 justify-center md:justify-start max-w-xl"
+            className="flex flex-col md:flex-row items-center gap-6 justify-center lg:justify-start max-w-xl"
           >
-            <p className="font-sans text-sm md:text-base leading-relaxed text-gray-400 font-light">
+            <p className="font-sans text-sm md:text-base leading-relaxed text-gray-300 md:text-gray-400 font-light px-2 md:px-0">
               Infraestrutura Digital de Elite & Agentes Inteligentes. Desenvolvemos WebApps e Landing Pages de alta conversão e implementamos IA para captar pacientes High-Ticket enquanto você opera.
             </p>
           </motion.div>
@@ -138,11 +137,11 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
              initial={{ opacity: 0, y: 10 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.6 }}
-             className="pt-6 w-full md:w-auto flex justify-center md:justify-start"
+             className="pt-4 md:pt-6 w-full md:w-auto flex justify-center lg:justify-start"
           >
              <button 
                 onClick={scrollToModules}
-                className="group relative px-10 py-5 bg-white text-noir font-mono text-xs font-bold tracking-[0.2em] overflow-hidden hover:bg-gray-100 transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.4)]"
+                className="group relative px-8 py-4 md:px-10 md:py-5 bg-white text-noir font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] overflow-hidden hover:bg-gray-100 transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.4)] active:scale-95"
              >
                 <div className="relative z-10 flex items-center gap-4">
                    <span className="relative flex h-2 w-2">
@@ -159,7 +158,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
         </div>
 
         {/* Visual */}
-        <div className="order-2 md:col-span-5 flex justify-center md:justify-end perspective-1000 mt-8 md:mt-0 w-full px-4 md:px-0">
+        <div className="order-2 lg:col-span-5 flex justify-center lg:justify-end perspective-1000 mt-8 lg:mt-0 w-full px-4 md:px-0">
           <motion.div 
              style={{ 
                rotateX, 
@@ -167,7 +166,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
                y: mobileY, 
                transformStyle: "preserve-3d" 
              }}
-             className="relative w-[300px] h-[400px] md:w-[450px] md:h-[600px]"
+             className="relative w-[280px] h-[380px] sm:w-[320px] sm:h-[420px] md:w-[450px] md:h-[600px]"
           >
              {/* Main Frame */}
              <div className={`relative h-full w-full bg-zinc-900 overflow-hidden border border-white/10 shadow-2xl group`}>
@@ -205,17 +204,17 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
                 </div>
              </div>
              
-             {/* Floating Cards */}
+             {/* Floating Cards - Hidden on very small mobile for cleaner look, visible on tablets+ */}
              <motion.div 
                animate={{ y: [0, -8, 0] }}
                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute -right-6 top-32 bg-black/80 backdrop-blur-md border border-white/10 p-4 w-40 z-40 hidden sm:block"
+               className="absolute -right-4 top-24 md:-right-6 md:top-32 bg-black/80 backdrop-blur-md border border-white/10 p-4 w-32 md:w-40 z-40 hidden sm:block"
              >
                 <div className="flex items-center gap-2 mb-2 text-medical-teal">
                    <TrendingUp size={12} />
                    <span className="text-[9px] font-bold tracking-widest font-mono text-white">BRANDING</span>
                 </div>
-                <div className="text-2xl text-white font-serif">Authority</div>
+                <div className="text-xl md:text-2xl text-white font-serif">Authority</div>
                 <div className="text-[9px] text-gray-500 mt-1 font-mono">Posicionamento Premium</div>
              </motion.div>
 
