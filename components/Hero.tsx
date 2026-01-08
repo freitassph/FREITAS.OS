@@ -25,8 +25,17 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
 
   const rotateX = useTransform(mouseY, [-0.5, 0.5], ["2deg", "-2deg"]);
   const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-2deg", "2deg"]);
-  const glareX = useTransform(mouseX, [-0.5, 0.5], ["0%", "100%"]);
 
+  // Define background gradient transform explicitly to avoid TS2345
+  const glassBackground = useTransform(
+    mouseX, 
+    [-0.5, 0.5], 
+    [
+      "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.05) 45%, transparent 50%)", 
+      "linear-gradient(105deg, transparent 50%, rgba(255,255,255,0.05) 60%, transparent 70%)"
+    ]
+  );
+  
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -176,13 +185,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
 
                 {/* Glass Reflection Overlay */}
                 <motion.div 
-                   style={{
-                      background: useTransform(
-                         glareX, 
-                         ["0%", "100%"], 
-                         ["linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.05) 45%, transparent 50%)", "linear-gradient(105deg, transparent 50%, rgba(255,255,255,0.05) 60%, transparent 70%)"]
-                      )
-                   }}
+                   style={{ background: glassBackground }}
                    className="absolute inset-0 z-30 pointer-events-none"
                 />
 

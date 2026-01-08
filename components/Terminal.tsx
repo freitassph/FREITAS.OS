@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { AppMode } from '../types';
-import { Server, Activity, Globe, Cpu, Wifi } from 'lucide-react';
+import { HardDrive, Activity, Globe, Cpu, Wifi } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface TerminalProps {
@@ -135,7 +135,7 @@ const Terminal: React.FC<TerminalProps> = ({ mode }) => {
             {/* Title / Status */}
             <div className="flex items-center gap-4 pl-2 min-w-fit">
                 <div className="p-2.5 bg-zinc-900/50 rounded-lg border border-white/5 shadow-[0_0_15px_rgba(20,184,166,0.05)]">
-                    <Server size={16} className="text-medical-teal opacity-80" />
+                    <HardDrive size={16} className="text-medical-teal opacity-80" />
                 </div>
                 <div>
                     <h3 className="text-[10px] font-mono font-bold text-gray-500 tracking-widest uppercase mb-1">
