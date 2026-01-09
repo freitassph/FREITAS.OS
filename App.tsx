@@ -1,3 +1,12 @@
+/**
+ * FREITAS.OS // THE NEXUS INTERFACE
+ * Classificação: Ultra-Premium / Medical-Futurism
+ * Conceito: "A Sala de Cirurgia Digital"
+ * 
+ * Main Application Entry Point
+ * Architecture: Neuro-Adaptive Interface
+ */
+
 import React, { useState } from 'react';
 import { AppMode } from './types';
 import Hero from './components/Hero';
