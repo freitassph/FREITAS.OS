@@ -7,7 +7,7 @@ interface OperatorProps {
   mode: AppMode;
 }
 
-const OP_CLINIC_IMG = "https://i.ibb.co/yBSbM35F/Gemini-Generated-Image-jxdl30jxdl30jxdl.png";
+const OP_CLINIC_IMG = "https://i.ibb.co/HLqRSjcr/BD59-BA87-F4-D3-462-D-A9-EA-E1-D61-F9-AE0-EF.png";
 
 const Operator: React.FC<OperatorProps> = ({ mode }) => {
   const accentColor = 'text-medical-teal';

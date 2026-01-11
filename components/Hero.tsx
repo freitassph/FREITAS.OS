@@ -7,7 +7,7 @@ interface HeroProps {
   mode: AppMode;
 }
 
-const CLINIC_IMAGE = "https://i.ibb.co/x92fkfH/Gemini-Generated-Image-c83r4dc83r4dc83r.png";
+const CLINIC_IMAGE = "https://i.ibb.co/93YWf0K1/5-D977-C3-B-563-C-4-EE0-A9-B6-7-A61508722-FE.png";
 
 const Hero: React.FC<HeroProps> = ({ mode }) => {
   const [timeStr, setTimeStr] = useState('');
