@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppMode } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Cpu, Network, Bot, Plus, Minus, Stethoscope, Zap, Binary, LayoutTemplate, MessageSquareCode, DatabaseZap, ChevronRight, Check, SquareTerminal } from 'lucide-react';
+import { ArrowUpRight, Bot, Plus, Minus, Stethoscope, Zap, Binary, LayoutTemplate, MessageSquareCode, ChevronRight, SquareTerminal } from 'lucide-react';
 
 interface ModulesProps {
   mode: AppMode;

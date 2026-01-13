@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppMode } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Instagram, MessageCircle, ExternalLink, ArrowRight, Dna, ShieldCheck } from 'lucide-react';
+import { X, Instagram, MessageCircle, ExternalLink, ArrowRight, Dna } from 'lucide-react';
 
 interface FooterProps {
   mode: AppMode;

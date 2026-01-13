@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppMode } from '../types';
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
-import { LocateFixed, Clock, Activity, ShieldCheck, TrendingUp, ArrowDown, Database, CheckCircle2 } from 'lucide-react';
+import { LocateFixed, Clock, Activity, ArrowDown, CheckCircle2 } from 'lucide-react';
 
 interface HeroProps {
   mode: AppMode;
@@ -25,16 +25,6 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   // Using numbers for rotation to ensure correct MotionValue<number> type inference
   const rotateX = useTransform(mouseY, [-0.5, 0.5], [2, -2]);
   const rotateY = useTransform(mouseX, [-0.5, 0.5], [-2, 2]);
-
-  // Define background gradient transform explicitly
-  const glassBackground = useTransform(
-    mouseX, 
-    [-0.5, 0.5], 
-    [
-      "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.05) 45%, transparent 50%)", 
-      "linear-gradient(105deg, transparent 50%, rgba(255,255,255,0.05) 60%, transparent 70%)"
-    ]
-  );
   
   useEffect(() => {
     const updateTime = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { AppMode } from '../types';
-import { HardDrive, Activity, Globe, Cpu, Wifi, DatabaseZap, Zap, Bot } from 'lucide-react';
+import { HardDrive, Cpu, Wifi, Zap, Bot } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface TerminalProps {
@@ -109,8 +109,6 @@ const ECGGraph: React.FC = () => {
 }
 
 const Terminal: React.FC<TerminalProps> = ({ mode }) => {
-  const accentColor = 'text-medical-teal';
-
   // Metrics focused on Protocol Performance (Directly linked to Modules)
   const systems = [
     {

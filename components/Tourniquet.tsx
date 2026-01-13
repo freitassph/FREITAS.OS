@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, Activity, ShieldCheck, ArrowDown, Ban, Scan, XCircle, CheckCircle2 } from 'lucide-react';
+import { Activity, ShieldCheck, ArrowDown, Scan, XCircle, CheckCircle2 } from 'lucide-react';
 
 // Animated Icon: The Leak (Hemorrhage)
 const HemorrhageIcon = () => (

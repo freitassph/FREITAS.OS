@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppMode } from '../types';
-import { motion } from 'framer-motion';
-import { Fingerprint, ShieldCheck, Database, Lock, Scan, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Database, Lock, Scan, CheckCircle2 } from 'lucide-react';
 
 interface OperatorProps {
   mode: AppMode;
@@ -10,8 +9,6 @@ interface OperatorProps {
 const OP_CLINIC_IMG = "https://i.ibb.co/Ndr864tg/BCA95-EE1-A909-4265-90-F6-AADE7-BDE8197.png";
 
 const Operator: React.FC<OperatorProps> = ({ mode }) => {
-  const accentColor = 'text-medical-teal';
-
   return (
     <section className="py-20 md:py-32 px-4 md:px-6 container mx-auto relative z-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
