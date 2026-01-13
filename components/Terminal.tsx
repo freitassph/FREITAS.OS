@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { AppMode } from '../types';
-import { HardDrive, Activity, Globe, Cpu, Wifi } from 'lucide-react';
+import { HardDrive, Activity, Globe, Cpu, Wifi, DatabaseZap, Zap, Bot } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface TerminalProps {
@@ -111,28 +111,28 @@ const ECGGraph: React.FC = () => {
 const Terminal: React.FC<TerminalProps> = ({ mode }) => {
   const accentColor = 'text-medical-teal';
 
-  // Metrics focused on Digital Performance
+  // Metrics focused on Protocol Performance (Directly linked to Modules)
   const systems = [
     {
       id: 1,
-      label: "WEB ARCHITECTURE",
-      status: "ONLINE",
-      detail: "Conversion Optimized",
-      icon: Globe
+      label: "CONVERSION INFRA", // Linked to Module 01 (Interfaces)
+      status: "OPTIMIZED",
+      detail: "Neuro-Design",
+      icon: Zap
     },
     {
       id: 2,
-      label: "AI RECEPTIONISTS",
+      label: "AI SECRETARY", // Linked to Module 02 (Secretária de IA)
       status: "ACTIVE",
-      detail: "24/7 Response",
+      detail: "Auto-Booking",
       icon: Cpu
     },
     {
       id: 3,
-      label: "NEURO-BRANDING",
-      status: "SYNCED",
-      detail: "Authority Established",
-      icon: Activity
+      label: "STRATEGIC AI", // Linked to Module 03 (Mentoria Estratégica)
+      status: "READY",
+      detail: "Workflow Audit",
+      icon: Bot
     }
   ];
 

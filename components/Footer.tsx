@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppMode } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Instagram, MessageCircle, ExternalLink, ArrowRight, Dna } from 'lucide-react';
+import { X, Instagram, MessageCircle, ExternalLink, ArrowRight, Dna, ShieldCheck } from 'lucide-react';
 
 interface FooterProps {
   mode: AppMode;
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ mode }) => {
   const backdropVariants = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
   const modalVariants = {
     hidden: { scale: 0.95, opacity: 0, y: 20 },
-    visible: { scale: 1, opacity: 1, y: 0, transition: { type: 'spring', damping: 25, stiffness: 300 } }
+    visible: { scale: 1, opacity: 1, y: 0, transition: { type: 'spring' as const, damping: 25, stiffness: 300 } }
   };
 
   return (
@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({ mode }) => {
                      </div>
                      <p className="text-sm text-gray-500 font-light leading-relaxed">
                          Laboratório de Inteligência Digital para Medicina.
-                         Construímos a arquitetura invisível que posiciona sua clínica no topo do mercado através de Branding de Elite e IA.
+                         Construímos a arquitetura invisível que posiciona sua clínica no topo do mercado.
                      </p>
                      
                      <div className="flex gap-4">
@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({ mode }) => {
                         onClick={() => setActiveModal('neural')}
                         className="group flex items-center gap-3 text-white/80 border-b border-white/10 pb-1 hover:text-white hover:border-medical-teal transition-all"
                      >
-                        <span className="text-xs font-mono font-bold tracking-widest uppercase">Iniciar Contato</span>
+                        <span className="text-xs font-mono font-bold tracking-widest uppercase">Solicitar Diagnóstico</span>
                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-medical-teal" />
                      </button>
                  </div>
@@ -82,9 +82,12 @@ const Footer: React.FC<FooterProps> = ({ mode }) => {
 
              {/* Bottom Bar */}
              <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-                 <div className="text-[10px] font-mono text-gray-700 tracking-wider uppercase">
-                     © {new Date().getFullYear()} FREITAS LAB. All rights reserved.
+                 <div className="flex flex-col gap-2">
+                    <div className="text-[10px] font-mono text-gray-700 tracking-wider uppercase">
+                        © {new Date().getFullYear()} FREITAS LAB. All rights reserved.
+                    </div>
                  </div>
+
                  <div className="flex items-center gap-6">
                      <button 
                         onClick={scrollToProtocols}
