@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppMode } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Bot, Plus, Minus, Stethoscope, Zap, Binary, LayoutTemplate, MessageSquareCode, ChevronRight, SquareTerminal } from 'lucide-react';
+import { ArrowUpRight, Bot, Plus, Minus, Stethoscope, Zap, Binary, LayoutTemplate, MessageSquareCode, ChevronRight, Terminal } from 'lucide-react';
 
 interface ModulesProps {
   mode: AppMode;
@@ -199,9 +199,9 @@ const Modules: React.FC<ModulesProps> = ({ mode }) => {
                                                     transition={{ delay: idx * 0.1 }}
                                                     className="group/card relative bg-zinc-900/40 border border-white/5 rounded-lg p-5 hover:bg-zinc-900/80 hover:border-medical-teal/20 transition-all duration-300 overflow-hidden"
                                                 >
-                                                    {/* Background Tech Detail */}
+                                                    {/* Background Tech Detail - UPDATED ICON HERE */}
                                                     <div className="absolute right-0 top-0 p-3 opacity-0 group-hover/card:opacity-10 transition-opacity">
-                                                        <SquareTerminal size={40} />
+                                                        <Terminal size={40} />
                                                     </div>
 
                                                     <div className="flex gap-4">
