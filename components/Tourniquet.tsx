@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Activity, ShieldCheck, ArrowDown, Scan, XCircle, CheckCircle2 } from 'lucide-react';
+import { Activity, Shield, ArrowDown, Scan, XCircle, CheckCircle2 } from 'lucide-react';
 
 // Animated Icon: The Leak (Hemorrhage)
 const HemorrhageIcon = () => (
@@ -41,7 +41,7 @@ const TourniquetIcon = () => (
     />
     
     <div className="relative z-10 p-3 bg-noir rounded-lg border border-medical-teal/40 shadow-[0_0_15px_rgba(20,184,166,0.2)]">
-       <ShieldCheck size={24} className="text-medical-teal" />
+       <Shield size={24} className="text-medical-teal" />
     </div>
   </div>
 );

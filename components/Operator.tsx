@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppMode } from '../types';
-import { ShieldCheck, Database, Lock, Scan, CheckCircle2 } from 'lucide-react';
+import { Shield, Database, Lock, Scan, CheckCircle2 } from 'lucide-react';
 
 interface OperatorProps {
   mode: AppMode;
@@ -129,7 +129,7 @@ const Operator: React.FC<OperatorProps> = ({ mode }) => {
                 {/* Spec Card 1 */}
                 <div className="group relative p-5 bg-zinc-900/40 border border-white/5 hover:border-medical-teal/30 transition-all duration-300 overflow-hidden rounded-lg">
                     <div className="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
-                        <ShieldCheck size={18} className="text-medical-teal" />
+                        <Shield size={18} className="text-medical-teal" />
                     </div>
                     <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">Protocolo CFM</h4>
                     <p className="text-sm text-gray-300 font-serif italic">Blindagem Ética</p>

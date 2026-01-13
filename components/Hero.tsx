@@ -182,13 +182,13 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
                y: mobileY, 
                transformStyle: "preserve-3d" 
              }}
-             className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] md:w-[400px] md:h-[550px]"
+             className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] md:w-[400px] md:h-[550px] group"
           >
              {/* Main Frame - Premium Glass Aesthetic (Unified with Operator Mobile Style) */}
-             <div className="relative h-full w-full p-1.5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm shadow-2xl">
+             <div className="relative h-full w-full p-1.5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
                 
                 {/* Inner Image Container */}
-                <div className="relative h-full w-full overflow-hidden rounded-lg bg-zinc-900 group">
+                <div className="relative h-full w-full overflow-hidden rounded-lg bg-zinc-900">
                     <img 
                         src={CLINIC_IMAGE}
                         alt="Pedro Freitas"
@@ -196,7 +196,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
                         // @ts-ignore
                         fetchPriority="high"
                         decoding="async"
-                        className="h-full w-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-700 grayscale-[10%]"
+                        className="h-full w-full object-cover object-center opacity-90 group-hover:opacity-100 transition-all duration-700 grayscale-[10%] group-hover:scale-105"
                         style={{
                             maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
                             WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
