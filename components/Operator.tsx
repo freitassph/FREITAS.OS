@@ -6,7 +6,7 @@ interface OperatorProps {
   mode: AppMode;
 }
 
-const OP_CLINIC_IMG = "https://i.ibb.co/Ndr864tg/BCA95-EE1-A909-4265-90-F6-AADE7-BDE8197.png";
+const OP_CLINIC_IMG = "https://i.ibb.co/k7Y58B4/BCA95-EE1-A909-4265-90-F6-AADE7-BDE8197.avif";
 
 const Operator: React.FC<OperatorProps> = ({ mode }) => {
   return (
