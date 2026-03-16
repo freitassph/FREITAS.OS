@@ -194,7 +194,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
                         alt="Pedro Freitas"
                         loading="eager"
                         // @ts-ignore
-                        fetchPriority="high"
+                        fetchpriority="high"
                         decoding="async"
                         className="h-full w-full object-cover object-center opacity-90 group-hover:opacity-100 transition-all duration-700 grayscale-[10%] group-hover:scale-105"
                         style={{

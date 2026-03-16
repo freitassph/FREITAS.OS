@@ -59,7 +59,82 @@ const Tourniquet: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
         
-        {/* Section Header */}
+        {/* SECTION: DIAGNÓSTICO DE FALHA */}
+        <div className="mb-32">
+            <div className="flex flex-col items-center text-center space-y-6 mb-16 relative">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center gap-2"
+                >
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/5 text-red-400 backdrop-blur-md">
+                        <Activity size={12} className="animate-pulse" />
+                        <span className="text-[9px] font-mono tracking-[0.2em] uppercase font-bold">■ DIAGNÓSTICO DE FALHA</span>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-5xl text-white tracking-tight">
+                        O Erro que Está Drenando <br className="hidden md:block"/> Sua Autoridade.
+                    </h2>
+                </motion.div>
+                
+                <p className="font-sans text-sm md:text-base text-gray-400 leading-relaxed max-w-2xl">
+                    Ter um site no ar não é ter presença digital. É ter uma ilusão de presença — e pagar caro por isso.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                {/* Card 1 */}
+                <div className="p-6 bg-zinc-900/40 border border-red-500/20 rounded-xl hover:border-red-500/40 transition-colors">
+                    <div className="flex items-center gap-3 mb-4">
+                        <XCircle size={20} className="text-red-500" />
+                        <h3 className="font-mono text-sm text-red-400 tracking-widest uppercase">SITE LENTO</h3>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                        60% dos seus pacientes ideais abandonam se demorar mais de 3.5s. Cada segundo é um lead que foi embora — e não vai voltar.
+                    </p>
+                </div>
+
+                {/* Card 2 */}
+                <div className="p-6 bg-zinc-900/40 border border-red-500/20 rounded-xl hover:border-red-500/40 transition-colors">
+                    <div className="flex items-center gap-3 mb-4">
+                        <XCircle size={20} className="text-red-500" />
+                        <h3 className="font-mono text-sm text-red-400 tracking-widest uppercase">AGÊNCIA GENÉRICA</h3>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                        Eles usaram o mesmo template de academia, pizzaria e sua clínica. Sua especialidade virou um placeholder no portfólio deles.
+                    </p>
+                </div>
+
+                {/* Card 3 */}
+                <div className="p-6 bg-zinc-900/40 border border-red-500/20 rounded-xl hover:border-red-500/40 transition-colors">
+                    <div className="flex items-center gap-3 mb-4">
+                        <XCircle size={20} className="text-red-500" />
+                        <h3 className="font-mono text-sm text-red-400 tracking-widest uppercase">COPY FORA DA CFM</h3>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                        Uma frase prometendo resultado pode custar seu CRM. A maioria das agências nunca leu a Resolução 2.336/2023.
+                    </p>
+                </div>
+
+                {/* Card 4 */}
+                <div className="p-6 bg-zinc-900/40 border border-red-500/20 rounded-xl hover:border-red-500/40 transition-colors">
+                    <div className="flex items-center gap-3 mb-4">
+                        <XCircle size={20} className="text-red-500" />
+                        <h3 className="font-mono text-sm text-red-400 tracking-widest uppercase">SISTEMAS DESCONECTADOS</h3>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                        Agenda em um app, leads em outro, follow-up no WhatsApp manual. Você opera sua clínica no modo manual enquanto paga por automação.
+                    </p>
+                </div>
+            </div>
+
+            <div className="mt-12 text-center">
+                <p className="font-serif italic text-xl text-gray-300">
+                    Isso não é problema de tráfego. <span className="text-red-400">É problema de arquitetura.</span>
+                </p>
+            </div>
+        </div>
+
+        {/* SECTION: TORNIQUETE DIGITAL */}
         <div className="flex flex-col items-center text-center space-y-8 mb-16 relative">
             
             {/* Connecting Line to Previous Section */}
@@ -70,9 +145,9 @@ const Tourniquet: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center gap-2"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/5 text-red-400 backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-medical-teal/30 bg-medical-teal/5 text-medical-teal backdrop-blur-md">
                     <Activity size={12} className="animate-pulse" />
-                    <span className="text-[9px] font-mono tracking-[0.2em] uppercase font-bold">Protocolo de Diagnóstico</span>
+                    <span className="text-[9px] font-mono tracking-[0.2em] uppercase font-bold">■ PROTOCOLO DE EMERGÊNCIA</span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-5xl text-white tracking-tight">
                     O <span className="text-white border-b border-red-500/50 pb-1">Torniquete</span> Digital.
@@ -80,7 +155,9 @@ const Tourniquet: React.FC = () => {
             </motion.div>
             
             <p className="font-sans text-sm md:text-base text-gray-400 leading-relaxed max-w-xl">
-                O maior erro médico no digital: injetar tráfego <span className="text-red-400/80">(sangue)</span> em um site que vaza pacientes <span className="text-red-400/80">(hemorragia)</span>.
+                O maior erro no marketing médico: injetar tráfego <span className="text-red-400/80">(sangue)</span> em uma infraestrutura que vaza pacientes <span className="text-red-400/80">(hemorragia)</span>.
+                <br/><br/>
+                Você pode investir R$10.000/mês em Google Ads. Se a página destino for lenta, genérica ou não converter — você está pagando para perder.
             </p>
         </div>
 

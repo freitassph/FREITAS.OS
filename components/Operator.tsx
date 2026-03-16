@@ -64,17 +64,31 @@ const Operator: React.FC<OperatorProps> = ({ mode }) => {
             <div className="space-y-6">
                 <div className="flex items-center gap-3">
                     <span className="h-px w-8 bg-medical-teal/50"></span>
-                    <span className="text-[10px] font-mono tracking-[0.3em] text-medical-teal uppercase">Operator Profile</span>
+                    <span className="text-[10px] font-mono tracking-[0.3em] text-medical-teal uppercase">■ OPERATOR PROFILE</span>
                 </div>
                 
                 <h2 className="font-serif text-3xl md:text-5xl text-white tracking-tight leading-[1.1]">
-                    O elo perdido entre <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">Medicina e Tecnologia.</span>
+                    Pedro Freitas. <br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">Medical Architect.</span>
                 </h2>
 
-                <p className="font-sans text-sm md:text-lg text-gray-400 leading-relaxed font-light max-w-2xl border-l border-white/10 pl-6">
-                    A maioria das agências trata sua clínica como um comércio genérico. Eu projeto a jornada do paciente com a visão de quem vive a rotina médica. Entendo a ética, a terminologia e a responsabilidade de lidar com vidas.
-                </p>
+                <div className="font-sans text-sm md:text-base text-gray-400 leading-relaxed font-light max-w-2xl border-l border-white/10 pl-6 space-y-4">
+                    <p>
+                        Sou estudante de medicina e desenvolvedor. Fundei o FREITAS.LAB porque vi médicos brilhantes — com técnica de elite e especialidades raras — perdendo pacientes para clínicas medíocres com sites melhores.
+                    </p>
+                    <p>
+                        Isso é um erro de arquitetura. Não de competência médica.
+                    </p>
+                    <p>
+                        A maioria das agências nunca leu a CFM 2.336/2023. Não sabe o que é LGPD aplicada a dados de saúde. Não entende por que um paciente de alto padrão hesita em formulários longos.
+                    </p>
+                    <p className="text-white font-medium">
+                        Eu entendo. Porque eu vivo isso.
+                    </p>
+                    <p>
+                        Durante o dia estudo propedêutica e semiologia. À noite escrevo TypeScript e projeto sistemas. Essa dualidade não é curiosidade — é o meu diferencial estrutural.
+                    </p>
+                </div>
             </div>
 
             {/* Mobile/Tablet Main Image (Fixed Aspect Ratio & Centering) */}
@@ -131,10 +145,9 @@ const Operator: React.FC<OperatorProps> = ({ mode }) => {
                     <div className="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
                         <Shield size={18} className="text-medical-teal" />
                     </div>
-                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">Protocolo CFM</h4>
-                    <p className="text-sm text-gray-300 font-serif italic">Blindagem Ética</p>
-                    <p className="text-[11px] text-gray-500 mt-2 leading-relaxed">
-                        Estruturas validadas conforme a Resolução 2.336/2023. Publicidade médica sem riscos.
+                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">■ MED STUDENT @ UNIRG</h4>
+                    <p className="text-[11px] text-gray-500 mt-2 leading-relaxed uppercase">
+                        ■ FUNDADOR — FREITAS.LAB
                     </p>
                 </div>
 
@@ -143,10 +156,9 @@ const Operator: React.FC<OperatorProps> = ({ mode }) => {
                      <div className="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
                         <Database size={18} className="text-medical-teal" />
                     </div>
-                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">Neuro-Linguística</h4>
-                    <p className="text-sm text-gray-300 font-serif italic">Tradução Técnica</p>
-                    <p className="text-[11px] text-gray-500 mt-2 leading-relaxed">
-                        Eu falo sua língua nativa. Sem ruídos na explicação de patologias ou procedimentos complexos.
+                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">■ 3º LUGAR — VIBECODING CHALLENGE</h4>
+                    <p className="text-[11px] text-gray-500 mt-2 leading-relaxed uppercase">
+                        ■ CFM 2.336/2023 SPECIALIST
                     </p>
                 </div>
 
@@ -155,9 +167,9 @@ const Operator: React.FC<OperatorProps> = ({ mode }) => {
                      <div className="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
                         <Lock size={18} className="text-medical-teal" />
                     </div>
-                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">Arquitetura Proprietária</h4>
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <p className="text-sm text-gray-300 font-serif italic">UX Baseada em Anamnese</p>
+                    <h4 className="font-mono text-xs text-medical-teal tracking-widest uppercase mb-2">■ STACK: NEXT.JS · VERCEL · ANTHROPIC · SUPABASE</h4>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-2">
+                        <p className="text-sm text-gray-300 font-serif italic">Arquitetura Proprietária</p>
                         <div className="flex items-center gap-2">
                              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                              <span className="text-[9px] font-mono text-gray-500 uppercase">System Active</span>
